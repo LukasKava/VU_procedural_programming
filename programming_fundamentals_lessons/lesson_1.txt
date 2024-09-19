@@ -1,0 +1,22 @@
+//******************************************
+Porgramavimo pagrindai
+//******************************************
+
+
+THEME: Safety, Cybersecurity
+
+Main attack vectors:
+
+--Info. systems:
+	Wrong configuration
+	Used not by the specification
+	...
+--Partners, third-parties
+--Users:
+	Social engineering
+	Administration and priveleged users
+	...
+--Abusing the weakest point
+
+
+Nothing important was told throught whole lecture
