@@ -1,0 +1,62 @@
+QUERY1 [Students that chose 0 courses]:
+Filter applied, 11 students found
+Kylie Damon year of study: 2 load: 0 laguages: English 
+Kylie Quarry year of study: 1 load: 0 laguages: English Lithuanian 
+Debora Thornton year of study: 3 load: 0 laguages: English Russian Spanish
+...
+
+QUERY2 [Students that have average >= 5]:
+Filter applied, 887 students found
+1 Adam Leben load: 4 average: 5.500000 courses and grades | Operating systems 8 | Physics 1 | Physics 9 | Philosophy 4 |
+2 Helen Darry load: 4 average: 7.000000 courses and grades | Discrete mathematics 10 | Philosophy 7 | Computer networks 6 | Discrete mathematics 5 |
+3 Angelina Brighthill load: 3 average: 9.000000 courses and grades | Algorithms 9 | Calculus 8 | Set theory 10 |
+...
+
+QUERY3 [Students who names start with Consonant]:
+Filter applied, 775 students found
+1 Helen Darry load: 4 average: 7.000000 courses and grades | Discrete mathematics 10 | Philosophy 7 | Computer networks 6 | Discrete mathematics 5 |
+2 Kylie Damon load: 0 average: 0.000000 courses and grades |
+3 Melissa Damon load: 2 average: 10.000000 courses and grades | Algorithms 10 | Calculus 10 |
+...
+
+QUERY4 [Students who are in the 2 or 3 course]:
+Filter applied, 506 students found
+1 Adam Leben course year: 3 load: 4 average: 5.500000 courses and grades | Operating systems 8 | Physics 1 | Physics 9 | Philosophy 4 |
+2 Kylie Damon course year: 2 load: 0 average: 0.000000 courses and grades |
+3 Angelina Leben course year: 3 load: 6 average: 3.666667 courses and grades | Physics 5 | Discrete mathematics 2 | Physics 1 | Computer programming 4 | Calculus 9 | Philosophy 1 |
+...
+
+QUERY5 [Students who have longer first name than last name]:
+Filter applied, 258 students found
+1 Angelina Leben course year: 3 load: 6 average: 3.666667 courses and grades | Physics 5 | Discrete mathematics 2 | Physics 1 | Computer programming 4 | Calculus 9 | Philosophy 1 |
+2 Melissa Damon course year: 4 load: 2 average: 10.000000 courses and grades | Algorithms 10 | Calculus 10 |
+3 Richard Leben course year: 4 load: 2 average: 9.000000 courses and grades | Calculus 9 | Operating systems 9 |
+...
+
+QUERY6 [Students who dont have negative marks]:
+Filter applied, 546 students found
+1 Helen Darry course year: 4 load: 4 average: 7.000000 courses and grades | Discrete mathematics 10 | Philosophy 7 | Computer networks 6 | Discrete mathematics 5 |
+2 Angelina Brighthill course year: 4 load: 3 average: 9.000000 courses and grades | Algorithms 9 | Calculus 8 | Set theory 10 |
+3 Melissa Damon course year: 4 load: 2 average: 10.000000 courses and grades | Algorithms 10 | Calculus 10 |
+...
+
+QUERY7 [Students who have grades >= 6 and <= 9]:
+Filter applied, 189 students found
+1 Sarah Perry course year: 3 load: 3 average: 6.333333 courses and grades | Algebra 6 | Discrete mathematics 7 | Algebra 6 |
+2 Richard Leben course year: 4 load: 2 average: 9.000000 courses and grades | Calculus 9 | Operating systems 9 |
+3 Kylie de Vito course year: 2 load: 2 average: 6.000000 courses and grades | Computer networks 6 | Computer networks 6 |
+...
+
+QUERY8 [Students who have Calculus and Algebra]:
+Filter applied, 81 students found
+1 Eve Hat course year: 4 load: 3 average: 7.000000 courses and grades | Discrete mathematics 9 | Calculus 2 | Algebra 10 |
+2 Julie Darry course year: 2 load: 4 average: 7.250000 courses and grades | Calculus 6 | Discrete mathematics 6 | Algebra 8 | Operating systems 9 |
+3 Robert Hat course year: 1 load: 5 average: 6.600000 courses and grades | Operating systems 10 | Philosophy 5 | Discrete mathematics 5 | Calculus 8 | Algebra 5 |
+...
+
+QUERY10 [Students who speak Lithuanian language]:
+Filter applied, 230 students found
+1 Richard Leben course year: 4 load: 2 average: 9.000000 courses and grades | Calculus 9 | Operating systems 9 | languages: English Russian Lithuanian
+2 Alice Gibson course year: 1 load: 3 average: 5.000000 courses and grades | Set theory 3 | Calculus 2 | Computer networks 10 | languages: English Lithuanian
+3 Jim Sheen course year: 4 load: 5 average: 7.000000 courses and grades | Discrete mathematics 1 | Operating systems 7 | Operating systems 10 | Computer networks 7 | Algorithms 10 | languages: English Lithuanian
+...
