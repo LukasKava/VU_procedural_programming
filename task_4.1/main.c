@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-//\n\033[0;32m
+//\033[0;32m
 //\033[0m
+
 
 void	calculateSolution(float a, float b, float c, int amountOfSolutions) {
 
