@@ -42,8 +42,7 @@ int main(void) {
 	printf("\nPlease enter the numbers. Once you want to stop enter a negative number\n");
 	printf(RED"For the fractional part only 3 digits will be considered\n\n"NEAUTRAL);
 	while (nbr >= 0) {
-		scanf("%lf", &nbr);
-
+		int answer = scanf("%lf", &nbr);
 		//The stop negative number
 		double positive = fabs(nbr);
 
@@ -56,7 +55,7 @@ int main(void) {
 		}
 	}
 
-	printf(GREEN"The number that has the most digits is: %.3lf amount of digits: %d\n"NEAUTRAL, maxDigitsNbr, amountOfDigits);
+	printf(GREEN"The number that has the most digits is: %lf amount of digits: %d\n"NEAUTRAL, maxDigitsNbr, amountOfDigits);
 
 	return (0);
 }
