@@ -6,7 +6,7 @@
 #define YELLOW "\033[0;33m"
 #define RED "\033[0;31m"
 #define NEAUTRAL "\033[0m"
-#define LIGHT_CYAN_BOLD_UNDERLINE "\e[1;4;96m"
+
 
 /*
 This template was generated automatically by the prepare_tasks.sh
