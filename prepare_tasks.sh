@@ -14,11 +14,11 @@ echo -e "${LIGHT_CYAN_BOLD_UNDERLINE}And time is too valuable ${RESET}\n"
 echo -e "${LIGHT_GRAY}###################################################################################${RESET}\n"
 
 
-isUserInputCorrect() {
+# isUserInputCorrect() {
 	
 
-	return 0
-}
+# 	return 0
+# }
 
 
 # $# means the command line argument
@@ -54,6 +54,7 @@ while [ "$#" -gt 0 ]; do
 		echo -e "[${SUCCESS}SUCCESS${RESET}]	File main.c was created"
 	else 
 		echo -e "[${WARNING}WARNING${RESET}]	File main.c already exists"
+		#FURTHER WORK NEEDS TO BE DONE FOR VALIDATION!!!
 		echo -e "Do you want to overwrite the main.c file with template.c? Yes/No"
 	fi
 
@@ -65,6 +66,16 @@ while [ "$#" -gt 0 ]; do
 	else
 		echo "[${ERROR}ERROR${RESET}]	template.c does not exist please check the original git repo"
 		echo "			Exiting the bash script"
+		exit 1
+	fi
+
+	#come out of the folder
+	if [ -d ".." ]; then
+		cd ".."
+		echo -e "[${SUCCESS}SUCCESS${RESET}]	Succesfully cd back"
+	else
+		echo -e "[${ERROR}ERROR${RESET}]	Cannot cd back"
+		echo -e "					Exiting the bash script"
 		exit 1
 	fi
 	echo -e "\n"
