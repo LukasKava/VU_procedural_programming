@@ -75,15 +75,11 @@ int	checkFileWeeksInput() {
 
 		// Remove the newline character if present
 		size_t len = strlen(weekday);
-		printf("strlen: %ld\n", len);
 		if (len > 0 && weekday[len - 1] == '\n') {
-			printf("HELLO\n");
 			weekday[len - 2] = '\0';
 		}
-		printf("File input1: [%s]\n", weekday);
 
 		//Wee need to check if the line contains correct Weekday
-		printf("Comparing: [%s] and [%s] and [%s]", weekday, weekdaysEnglish[weekdayCount-1], weekdaysLithuanian[weekdayCount-1]);
 		if (strcmp(weekday, weekdaysEnglish[weekdayCount-1]) == 0) {
 			++weekdayEMatch;
 		}else if (strcmp(weekday, weekdaysLithuanian[weekdayCount-1]) == 0) {
@@ -108,16 +104,23 @@ int	checkFileWeeksInput() {
 		return(1);
 	}
 
+
 	fclose(fp);
-	return (0);
+	if (weekdayEMatch != 0) {
+		return (2);
+	} else {
+		return (3);
+	}
 }
 
-
+//Zeller's congruence
 int dayofweek(int d, int m, int y) 
 { 
     int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 }; 
     y -= m < 3;
-    return ( y + y / 4 - y / 100 + y / 400 + t[m - 1] + d) % 7; 
+	int day = ( y + y / 4 - y / 100 + y / 400 + t[m - 1] + d) % 7;
+	day = (day + 6) % 7;
+    return day;
 }
 
 //IMPORTANT! There is a better approach of instead of opening the text file every time and needing to keep it open
@@ -125,9 +128,17 @@ int dayofweek(int d, int m, int y)
 //and other purposes. It prevents things like forgetting to fclose() and simplifies code a lot.
 int main(void) {
 	printf(LIGHT_CYAN_BOLD_UNDERLINE"[TASK DESCRIPTION]\n"NEAUTRAL);
+	//To lazy to write everything out
+	printf(LIGHT_GRAY"Read the main.c in folder task_6.4\n\n"NEAUTRAL);
+
+	// 2 is english 3 is lithuanian
+	int		englishOrLithuanian = 0;
+	char	*weekdaysEnglish[] = {"MONDAY","TUESDAY","WENESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"};
+	char	*weekdaysLithuanian[] = {"PIRMADIENIS","ANTRADIENIS","TRECIADIENIS","KETVIRTADIENIS","PENKTADIENIS","KETVIRTADIENIS","SESTADIENIS"};
+
 	
 	//Check if the file contains correct information
-	if (checkFileWeeksInput() == 1) {
+	if ((englishOrLithuanian = checkFileWeeksInput()) == 1) {
 		return (1);
 	}
 
@@ -139,7 +150,7 @@ int main(void) {
 	printf("Please enter the date YYYY-MM-DD;0 \"0\" is the ending number: ");
 	int		scan_return = 0;
 	// Check for valid input ALSO checking if someone is putting in something that does not belong to this scanf like a letter
-	if ((scan_return = scanf("%d-%d-%d-%d", &year, &month, &day, &nbrEnd)) != 4 && nbrEnd != 0) {
+	if ((scan_return = scanf("%d-%d-%d;%d", &year, &month, &day, &nbrEnd)) != 4 || nbrEnd != 0) {
 		if (nbrEnd != 0) {
 			printf(ERROR_TAG"The ending number should be 0\n");
 		} else {
@@ -151,7 +162,7 @@ int main(void) {
 		return (1);
 	}
 
-	printf("Chapter 1: checking year: %d month: %d day: %d\n", year, month, day);
+	printf("Error checking 1: checking year: %d month: %d day: %d\n", year, month, day);
 
 	if (year < 0 || year > 9999) {
 		printf(ERROR_TAG"YEAR should be between 0 and 9999\n");
@@ -164,6 +175,13 @@ int main(void) {
 	if (day < 0 || day > 31) {
 		printf(ERROR_TAG"DAY ending number should be 0\n");
 		return (1);
+	}
+
+	int dayOfWeek =  dayofweek(day, month, year);
+	if (englishOrLithuanian == 2) {
+		printf(GREEN"ANSWER: %d-%d-%d is a weekday: %s %d\n"NEAUTRAL, year, month, day, weekdaysEnglish[dayOfWeek], dayOfWeek );
+	} else {
+		printf(GREEN"ANSWER: %d-%d-%d is a weekday: %s %d\n"NEAUTRAL, year, month, day, weekdaysLithuanian[dayOfWeek], dayOfWeek);
 	}
 
 	return (0);
