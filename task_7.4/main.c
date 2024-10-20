@@ -47,7 +47,7 @@ void generateArray(int data[], int size, int low, int high) {
 
 int main(void) {
 	printf(LIGHT_CYAN_BOLD_UNDERLINE"[TASK DESCRIPTION]\n"NEAUTRAL);
-	printf(LIGHT_GRAY"Read the main.c in folder task_7.2\n\n"NEAUTRAL);
+	printf(LIGHT_GRAY"Read the main.c in folder task_7.4\n\n"NEAUTRAL);
 
 	int	data[20] = {0};
 

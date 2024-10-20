@@ -52,7 +52,7 @@ int getPositiveNumber(char *msg) {
 
 int main(void) {
 	printf(LIGHT_CYAN_BOLD_UNDERLINE"[TASK DESCRIPTION]\n"NEAUTRAL);
-	printf(LIGHT_GRAY"Read the main.c in folder task_7.2\n\n"NEAUTRAL);
+	printf(LIGHT_GRAY"Read the main.c in folder task_7.3\n\n"NEAUTRAL);
 
 	int number = getPositiveNumber("Please, enter a positive number: ");
 	printf("You have entered: %d\n", number);
