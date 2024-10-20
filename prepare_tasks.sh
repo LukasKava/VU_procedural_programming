@@ -34,9 +34,9 @@ while [ "$#" -gt 0 ]; do
 	#CHECKING IF THE FOLDER ALREADY EXISTS
 	if [ ! -d "${FOLDER_NAME}" ]; then
 		mkdir "${FOLDER_NAME}"
-		echo "[${SUCCESS}SUCCESS${RESET}]	New folder: ${FOLDER_NAME} has been created"
+		echo  -e "[${SUCCESS}SUCCESS${RESET}]	New folder: ${FOLDER_NAME} has been created"
 	else
-		echo "[${WARNING}WARNING${RESET}]	Directory already exists"
+		echo -e "[${WARNING}WARNING${RESET}]	Directory already exists"
 	fi
 
 	if [ -d "${FOLDER_NAME}" ]; then
@@ -62,9 +62,9 @@ while [ "$#" -gt 0 ]; do
 	if [ -f "../template.c" ]; then
 		#cp command was used because its the start of the file and I dont need a functionallity of cat template.c >> main.c
 		cp "../template.c" "./main.c"
-		echo "[${SUCCESS}SUCCESS${RESET}]	Transfered template.c boiler plate to main.c"
+		echo -e "[${SUCCESS}SUCCESS${RESET}]	Transfered template.c boiler plate to main.c"
 	else
-		echo "[${ERROR}ERROR${RESET}]	template.c does not exist please check the original git repo"
+		echo -e "[${ERROR}ERROR${RESET}]	template.c does not exist please check the original git repo"
 		echo "			Exiting the bash script"
 		exit 1
 	fi
